@@ -1,0 +1,9 @@
+#wrap {
+    padding: 5%;
+    text-align: center;
+}
+
+#left, #right {
+     display: inline-block;    
+     padding: 2%;   
+}

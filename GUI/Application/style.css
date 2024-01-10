@@ -1,0 +1,11 @@
+#down{
+    background-color: red;
+}
+
+#up{
+    background-color: green;
+}
+
+#disconnected{
+    background-color: grey;
+}
