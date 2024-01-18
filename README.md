@@ -3,5 +3,5 @@ SmartGridSim is a tool for simulation of communication and cyber attacks in digi
 
 ## Pre-requizites 
 
-- 'mininet' 
-- 'sqlite3' 
+- `mininet`
+- `sqlite3` 
