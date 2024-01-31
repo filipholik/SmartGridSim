@@ -20,7 +20,7 @@ def smartGridSimNetwork():
     info( '\n*** ************************************* *** \n' )
     info( '*** Starting Smart Grid Simulation Model *** \n' )
     info( '*** Topology: 1xDPS + 2xDSS + Control Center \n' )
-    info( '*** Version: 230420 \n' )
+    info( '*** Version: 240131 \n' )
     info( '*** Author: filip.holik@ntnu.no  \n' )
     info( '*** ************************************* *** \n' )
     info( '*** Adding controller\n' )
@@ -136,13 +136,13 @@ def sgsim_startcom_goose(self, line):
     info('Inserting rules for DPSGW switch... \n')
     net.get('DPSGW').cmdPrint('ovs-ofctl add-flow DPSGW dl_type=0x88b8,action=DROP')     # Simulation of GOOSE multicast 
     info('Starting GOOSE communication... \n')    
-    net.get('IED1').cmdPrint('xterm -geometry 90x30+10+10 -fa "Monospace" -fs 12 -T "IED1-GOOSE" -e "cd /home/sgsim/SmartGridSim/comlib_dps/sgdevices/IED_GOOSE/;./ied_goose IED1-eth0;bash"&') 
+    net.get('IED1').cmdPrint('xterm -geometry 90x30+10+10 -fa "Monospace" -fs 12 -T "IED1-GOOSE" -e "cd ../comlib_dps/sgdevices/IED_GOOSE/;./ied_goose IED1-eth0;bash"&') 
     time.sleep(0.5)
-    net.get('IED4').cmdPrint('xterm -geometry 90x30+30+30 -fa "Monospace" -fs 12 -T "IED4-GOOSE" -e "cd /home/sgsim/SmartGridSim/comlib_dps/sgdevices/IED_GOOSE/;./ied_goose IED4-eth0;bash"&') 
+    net.get('IED4').cmdPrint('xterm -geometry 90x30+30+30 -fa "Monospace" -fs 12 -T "IED4-GOOSE" -e "cd ../comlib_dps/sgdevices/IED_GOOSE/;./ied_goose IED4-eth0;bash"&') 
     time.sleep(0.5)
-    net.get('DPSHMI').cmdPrint('xterm -geometry 90x30+50+50 -fa "Monospace" -fs 12 -T "DPSHMI-GOOSE-1" -e "cd /home/sgsim/SmartGridSim/comlib_dps/sgdevices/DPSHMI_GOOSE/;./dpshmi 1;bash"&') 
+    net.get('DPSHMI').cmdPrint('xterm -geometry 90x30+50+50 -fa "Monospace" -fs 12 -T "DPSHMI-GOOSE-1" -e "cd ../comlib_dps/sgdevices/DPSHMI_GOOSE/;./dpshmi 1;bash"&') 
     time.sleep(0.5)
-    net.get('DPSHMI').cmdPrint('xterm -geometry 90x30+70+70 -fa "Monospace" -fs 12 -T "DPSHMI-GOOSE-4" -e "cd /home/sgsim/SmartGridSim/comlib_dps/sgdevices/DPSHMI_GOOSE/;./dpshmi 4;bash"&') 
+    net.get('DPSHMI').cmdPrint('xterm -geometry 90x30+70+70 -fa "Monospace" -fs 12 -T "DPSHMI-GOOSE-4" -e "cd ../comlib_dps/sgdevices/DPSHMI_GOOSE/;./dpshmi 4;bash"&') 
 
 def sgsim_startcom_sglab_goose(self, line):
     "Starts the GOOSE communication according to the SG LAB data." 
@@ -150,17 +150,17 @@ def sgsim_startcom_sglab_goose(self, line):
     info('Inserting rules for DPSGW switch... \n')
     net.get('DPSGW').cmdPrint('ovs-ofctl add-flow DPSGW dl_type=0x88b8,action=DROP')     # Simulation of GOOSE multicast 
     info('Starting GOOSE communication... \n')    
-    net.get('IED1').cmdPrint('xterm -geometry 90x30+10+10 -fa "Monospace" -fs 12 -T "IED1-GOOSE" -e "cd /home/sgsim/SmartGridSim/comlib_dps/sgdevices/IED_GOOSE/;./ied_goose_sglab IED1-eth0;bash"&') 
+    net.get('IED1').cmdPrint('xterm -geometry 90x30+10+10 -fa "Monospace" -fs 12 -T "IED1-GOOSE" -e "cd ../comlib_dps/sgdevices/IED_GOOSE/;./ied_goose_sglab IED1-eth0;bash"&') 
     time.sleep(0.5)
-    net.get('DPSHMI').cmdPrint('xterm -geometry 90x30+50+50 -fa "Monospace" -fs 12 -T "DPSHMI-GOOSE-1" -e "cd /home/sgsim/SmartGridSim/comlib_dps/sgdevices/DPSHMI_GOOSE/;./dpshmi;bash"&') 
+    net.get('DPSHMI').cmdPrint('xterm -geometry 90x30+50+50 -fa "Monospace" -fs 12 -T "DPSHMI-GOOSE-1" -e "cd ../comlib_dps/sgdevices/DPSHMI_GOOSE/;./dpshmi;bash"&') 
 
 def sgsim_attack_goose_fdi(self, line):
     "Starts the False Data Injection attack on GOOSE communication." 
     net = self.mn  
     info('Starting FDI attack... \n')    
-    net.get('ATTACKER').cmdPrint('xterm -geometry 90x30+10+10 -fa "Monospace" -fs 12 -T "ATTACKER-FDI" -e "cd /home/sgsim/SmartGridSim/comlib_dps/sgdevices/ATTACKER/;./fdi_goose ATTACKER-eth0;bash"&') 
+    net.get('ATTACKER').cmdPrint('xterm -geometry 90x30+10+10 -fa "Monospace" -fs 12 -T "ATTACKER-FDI" -e "cd ../comlib_dps/sgdevices/ATTACKER/;./fdi_goose ATTACKER-eth0;bash"&') 
     time.sleep(0.5)
-    net.get('DPSHMI').cmdPrint('xterm -geometry 90x30+50+50 -fa "Monospace" -fs 12 -T "DPSHMI-GOOSE" -e "cd /home/sgsim/SmartGridSim/comlib_dps/sgdevices/DPSHMI_GOOSE/;./dpshmi;bash"&') 
+    net.get('DPSHMI').cmdPrint('xterm -geometry 90x30+50+50 -fa "Monospace" -fs 12 -T "DPSHMI-GOOSE" -e "cd ../comlib_dps/sgdevices/DPSHMI_GOOSE/;./dpshmi;bash"&') 
 
 def sgsim_attack_dos(self, line):
     "Starts the DoS attack from DSS1RTU on the control center." 
@@ -174,13 +174,13 @@ def sgsim_startcom_sv(self, line):
     info('Inserting rules for DPSGW switch... \n')
     net.get('DPSGW').cmdPrint('ovs-ofctl add-flow DPSGW dl_type=0x88ba,action=DROP')     # Simulation of SV multicast 
     info('Starting SV communication... \n')    
-    net.get('IED2').cmdPrint('xterm -geometry 90x30+10+10 -fa "Monospace" -fs 12 -T "IED2-SV" -e "cd /home/sgsim/SmartGridSim/comlib_dps/sgdevices/IED_SV/;./ied_sv IED2-eth0;bash"&') 
+    net.get('IED2').cmdPrint('xterm -geometry 90x30+10+10 -fa "Monospace" -fs 12 -T "IED2-SV" -e "cd ../comlib_dps/sgdevices/IED_SV/;./ied_sv IED2-eth0;bash"&') 
     time.sleep(0.5)
-    net.get('IED3').cmdPrint('xterm -geometry 90x30+30+30 -fa "Monospace" -fs 12 -T "IED3-SV" -e "cd /home/sgsim/SmartGridSim/comlib_dps/sgdevices/IED_SV/;./ied_sv IED3-eth0;bash"&') 
+    net.get('IED3').cmdPrint('xterm -geometry 90x30+30+30 -fa "Monospace" -fs 12 -T "IED3-SV" -e "cd ../comlib_dps/sgdevices/IED_SV/;./ied_sv IED3-eth0;bash"&') 
     time.sleep(0.5)
-    net.get('DPSHMI').cmdPrint('xterm -geometry 90x30+50+50 -fa "Monospace" -fs 12 -T "DPSHMI-SV-2" -e "cd /home/sgsim/SmartGridSim/comlib_dps/sgdevices/DPSHMI_SV/;./dpshmi_sv 2;bash"&') 
+    net.get('DPSHMI').cmdPrint('xterm -geometry 90x30+50+50 -fa "Monospace" -fs 12 -T "DPSHMI-SV-2" -e "cd ../comlib_dps/sgdevices/DPSHMI_SV/;./dpshmi_sv 2;bash"&') 
     time.sleep(0.5)
-    net.get('DPSHMI').cmdPrint('xterm -geometry 90x30+70+70 -fa "Monospace" -fs 12 -T "DPSHMI-SV-3" -e "cd /home/sgsim/SmartGridSim/comlib_dps/sgdevices/DPSHMI_SV/;./dpshmi_sv 3;bash"&') 
+    net.get('DPSHMI').cmdPrint('xterm -geometry 90x30+70+70 -fa "Monospace" -fs 12 -T "DPSHMI-SV-3" -e "cd ../comlib_dps/sgdevices/DPSHMI_SV/;./dpshmi_sv 3;bash"&') 
     time.sleep(0.5)
 
 def sgsim_startcom_104(self, line):
@@ -188,16 +188,16 @@ def sgsim_startcom_104(self, line):
     net = self.mn   
     info('Starting IEC104 communication... \n')    
     info('Starting DSS1RTU communication... \n')    
-    net.get('DSS1RTU').cmdPrint('xterm -geometry 90x30+10+10 -fa "Monospace" -fs 12 -T "DSS1RTU" -e "cd /home/sgsim/SmartGridSim/comlib_dss/sgdevices/RTU/;./rtu;bash"&') 
+    net.get('DSS1RTU').cmdPrint('xterm -geometry 90x30+10+10 -fa "Monospace" -fs 12 -T "DSS1RTU" -e "cd ../comlib_dss/sgdevices/RTU/;./rtu;bash"&') 
     time.sleep(0.5)
     info('Starting DSS2RTU communication... \n')    
-    net.get('DSS2RTU').cmdPrint('xterm -geometry 90x30+30+30 -fa "Monospace" -fs 12 -T "DSS2RTU" -e "cd /home/sgsim/SmartGridSim/comlib_dss/sgdevices/RTU/;./rtu;bash"&') 
+    net.get('DSS2RTU').cmdPrint('xterm -geometry 90x30+30+30 -fa "Monospace" -fs 12 -T "DSS2RTU" -e "cd ../comlib_dss/sgdevices/RTU/;./rtu;bash"&') 
     time.sleep(0.5)
     info('Starting CONTROL communication with DSS1... \n')    
-    net.get('CONTROL').cmdPrint('xterm -geometry 90x30+50+50 -fa "Monospace" -fs 12 -T "CONTROL - DSS1 Monitoring" -e "cd /home/sgsim/SmartGridSim/comlib_dss/sgdevices/CONTROL/;sleep 1;./control 1.1.1.1;bash"&') 
+    net.get('CONTROL').cmdPrint('xterm -geometry 90x30+50+50 -fa "Monospace" -fs 12 -T "CONTROL - DSS1 Monitoring" -e "cd ../comlib_dss/sgdevices/CONTROL/;sleep 1;./control 1.1.1.1;bash"&') 
     time.sleep(0.5)
     info('Starting CONTROL communication with DSS2... \n')  
-    net.get('CONTROL').cmdPrint('xterm -geometry 90x30+70+70 -fa "Monospace" -fs 12 -T "CONTROL - DSS2 Monitoring" -e "cd /home/sgsim/SmartGridSim/comlib_dss/sgdevices/CONTROL/;sleep 1;./control 1.1.2.1;bash"&')
+    net.get('CONTROL').cmdPrint('xterm -geometry 90x30+70+70 -fa "Monospace" -fs 12 -T "CONTROL - DSS2 Monitoring" -e "cd ../comlib_dss/sgdevices/CONTROL/;sleep 1;./control 1.1.2.1;bash"&')
     info('IEC104 communication started... \n(Please close all the opened windows before exiting the Mininet.)  \n')   
 
 def sgsim_startperfmon(self, line):
@@ -205,16 +205,16 @@ def sgsim_startperfmon(self, line):
     net = self.mn   
     info('Starting IEC104 communication with performance monitoring... \n')    
     info('Starting DSS1RTU communication... \n')    
-    net.get('DSS1RTU').cmdPrint('xterm -geometry 90x30+10+10 -fa "Monospace" -fs 12 -T "DSS1RTU" -e "cd /home/sgsim/SmartGridSim/comlib_dss/sgdevices/PERFSEND/;./perfsend;bash"&') 
+    net.get('DSS1RTU').cmdPrint('xterm -geometry 90x30+10+10 -fa "Monospace" -fs 12 -T "DSS1RTU" -e "cd ../comlib_dss/sgdevices/PERFSEND/;./perfsend;bash"&') 
     time.sleep(0.5)
     info('Starting DSS2RTU communication... \n')    
-    net.get('DSS2RTU').cmdPrint('xterm -geometry 90x30+30+30 -fa "Monospace" -fs 12 -T "DSS2RTU" -e "cd /home/sgsim/SmartGridSim/comlib_dss/sgdevices/PERFSEND/;./perfsend;bash"&') 
+    net.get('DSS2RTU').cmdPrint('xterm -geometry 90x30+30+30 -fa "Monospace" -fs 12 -T "DSS2RTU" -e "cd ../comlib_dss/sgdevices/PERFSEND/;./perfsend;bash"&') 
     time.sleep(0.5)
     info('Starting CONTROL communication with DSS1... \n')    
-    net.get('CONTROL').cmdPrint('xterm -geometry 90x30+50+50 -fa "Monospace" -fs 12 -T "CONTROL - DSS1 Monitoring" -e "cd /home/sgsim/SmartGridSim/comlib_dss/sgdevices/PERFMON/;sleep 1;./perfmon 1.1.1.1;bash"&') 
+    net.get('CONTROL').cmdPrint('xterm -geometry 90x30+50+50 -fa "Monospace" -fs 12 -T "CONTROL - DSS1 Monitoring" -e "cd ../comlib_dss/sgdevices/PERFMON/;sleep 1;./perfmon 1.1.1.1;bash"&') 
     time.sleep(0.5)
     info('Starting CONTROL communication with DSS2... \n')  
-    net.get('CONTROL').cmdPrint('xterm -geometry 90x30+70+70 -fa "Monospace" -fs 12 -T "CONTROL - DSS2 Monitoring" -e "cd /home/sgsim/SmartGridSim/comlib_dss/sgdevices/PERFMON/;sleep 1;./perfmon 1.1.2.1;bash"&')
+    net.get('CONTROL').cmdPrint('xterm -geometry 90x30+70+70 -fa "Monospace" -fs 12 -T "CONTROL - DSS2 Monitoring" -e "cd ../comlib_dss/sgdevices/PERFMON/;sleep 1;./perfmon 1.1.2.1;bash"&')
     info('IEC104 communication with performance monitoring started... \n(Please close all the opened windows before exiting the Mininet.)  \n')   
 
 def sgsim_attackmirror(self, line):
