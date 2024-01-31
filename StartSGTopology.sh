@@ -1,8 +1,8 @@
 #! /usr/bin/sh 
-cd /home/sgsim/SmartGridSim/topologies
+cd topologies
 sudo mn --clean
 sudo python3 ./SmartGridTopology.py
-cd /home/sgsim/SmartGridSim/GUI
+cd ../GUI
 ./initDatabase.sh
 #bash
 
