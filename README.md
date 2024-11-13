@@ -14,5 +14,6 @@ SmartGridSim is a tool for simulation of communication and cyber attacks in digi
 
 - Topology: ./StartSGTopology.sh
 - Available commands: mininet> help
+-   Commands starting with sgsim_ were added to the Mininet, use help commnand for description
 - GUI: ./GUI/StartGUI.sh
 - SCADA simulation: open webbrowser at localhost:8000
