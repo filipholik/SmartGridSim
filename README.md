@@ -1,4 +1,4 @@
-# SmartGridSim (SGSim) 
+# Smart Grid Simulator (SGSim) 
 
 SGSim is a tool for simulation of communication and cyber attacks in digital primary and secondary substations.  
 
