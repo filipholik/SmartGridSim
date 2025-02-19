@@ -20,4 +20,4 @@ SGSim is a tool for simulation of communication and cyber attacks in digital pri
 
 # Functionality
 
-Functionality of SGSim was described in the article: ![Emulation of Digital Substations Communication for Cyber Security Awareness](https://www.mdpi.com/2079-9292/13/12/2318)
+Functionality of SGSim was described in the article: [Emulation of Digital Substations Communication for Cyber Security Awareness](https://www.mdpi.com/2079-9292/13/12/2318)
