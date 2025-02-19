@@ -1,18 +1,23 @@
-SmartGridSim is a tool for simulation of communication and cyber attacks in digital primary and secondary substations.  
+# SmartGridSim (SGSim) 
 
+SGSim is a tool for simulation of communication and cyber attacks in digital primary and secondary substations.  
 
-## Pre-requizites 
+# Pre-requizites 
 
 - `mininet`
 - `sqlite3`
 
-## Installation
+# Installation
 
 - Extract comlib_dps.zip and comlib_dss.zip in the same folder
 
-## Run
+# Run
 
 - Topology: ./StartSGTopology.sh
 - Available commands: mininet> help (commands starting with sgsim_ were added to the Mininet, use help commnand for description)
 - GUI: ./GUI/StartGUI.sh
 - SCADA simulation: open webbrowser at localhost:8000
+
+# Functionality
+
+Functionality of SGSim was described in the article: ![Emulation of Digital Substations Communication for Cyber Security Awareness](https://www.mdpi.com/2079-9292/13/12/2318)
