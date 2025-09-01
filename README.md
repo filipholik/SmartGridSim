@@ -18,6 +18,12 @@ SGSim is a tool for simulation of communication and cyber attacks in digital pri
 - GUI: ./GUI/StartGUI.sh
 - SCADA simulation: open webbrowser at localhost:8000
 
+# Topology 
+![SGSim topology](https://github.com/filipholik/SmartGridSim/blob/main/sgsim.png)
+
+# SCADA Simulation 
+![SCADA simulation](https://github.com/filipholik/SmartGridSim/blob/main/scada.png)
+
 # Functionality
 
 Functionality of SGSim was described in the article: [Emulation of Digital Substations Communication for Cyber Security Awareness](https://www.mdpi.com/2079-9292/13/12/2318)
